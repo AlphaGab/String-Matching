@@ -11,9 +11,11 @@ function findAllConsecutiveCombinationsWithIndex(text) {
   
     for (let windowSize = 1; windowSize <= textLength; windowSize++) {
       for (let startIndex = 0; startIndex <= textLength - windowSize; startIndex++) {
+        const val = text.slice(startIndex, startIndex + windowSize)
         const combination = {
-          value: text.slice(startIndex, startIndex + windowSize),
-          index: startIndex
+          value:val,
+          starts: startIndex,
+          ends: (val.length-1)+startIndex
         };
         combinations.push(combination);
       }
