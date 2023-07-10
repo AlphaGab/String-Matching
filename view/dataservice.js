@@ -1,12 +1,19 @@
+
 document.getElementById("fetchButton").addEventListener("click", () => {
 const inputValue = document.getElementById("textInput").value;
-fetch("http://localhost:3000/match", {
+const query = document.getElementById("Query").value
+let api = "http://localhost:3000/match"
+if(query){
+  api = "http://localhost:3000/match/search"
+}
+fetch(api, {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
-    value: inputValue
+    value: inputValue,
+    query:query
   })
 })
   .then(response => response.json())
