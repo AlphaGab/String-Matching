@@ -1,7 +1,7 @@
 
 document.getElementById("fetchButton").addEventListener("click", () => {
 const inputValue = document.getElementById("textInput").value;
-const query = document.getElementById("Query").value
+const query = document.getElementById("query").value
 let api = "http://localhost:3000/match"
 if(query){
   api = "http://localhost:3000/match/search"

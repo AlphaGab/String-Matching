@@ -17,7 +17,9 @@ app.post("/match",(req,res)=>{
 app.post("/match/search",(req,res)=>{
     const allCombinations = showAll(req,res);
     const searchQuery = req.body.query
+
     const searchResult = searchHandler(allCombinations,searchQuery)
+    console.log(searchResult)
     res.send(searchResult)
 })
 
